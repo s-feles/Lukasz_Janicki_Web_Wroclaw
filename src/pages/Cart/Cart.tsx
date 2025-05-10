@@ -1,7 +1,8 @@
 import { Product } from "../Main/components/ProductCard";
 import BackToProducts from "./components/BackToProducts";
 import Title from "./components/Title";
-import { CartContents } from "./components/CartContents";
+import ProceedToCheckout from "./components/Proceed";
+import CartContents from "./components/CartContents";
 
 export interface CartProduct extends Product {
   quantity: number;
@@ -61,6 +62,7 @@ export default function Cart() {
       <BackToProducts />
       <Title />
       <CartContents products={initialCartItems} />
+      <ProceedToCheckout />
     </div>
   )
 }

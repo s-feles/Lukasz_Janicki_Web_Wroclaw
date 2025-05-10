@@ -6,7 +6,7 @@ interface ContentProps {
   products: CartProduct[];
 }
 
-export const CartContents = ({ products }: ContentProps) => {
+const CartContents = ({ products }: ContentProps) => {
   const [cartItems, setCartItems] = useState<CartProduct[]>(products);
 
   const getPrice: (product: CartProduct) => number = (product) => {
@@ -48,7 +48,7 @@ export const CartContents = ({ products }: ContentProps) => {
   }
 
   return (
-    <div className="rounded-lg overflow-hidden">
+    <div className="rounded-lg overflow-hidden mb-6">
       <table className="table-auto w-full">
         <thead className="bg-gray-950">
           <tr>
@@ -86,7 +86,7 @@ export const CartContents = ({ products }: ContentProps) => {
                 </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-md">
-                {getSubtotal(product).toFixed(2) + ' zł'}
+                {getSubtotal(product).toFixed(2) + " zł"}
               </td>
               <td className="px-6 py-4 text-right">
                 <button
@@ -100,6 +100,18 @@ export const CartContents = ({ products }: ContentProps) => {
           ))}
         </tbody>
       </table>
+      <div className="mt-2">
+        <p className="text-3xl">
+          Your total is{" "}
+          <span className="font-bold">
+            {cartItems
+              .reduce((total, item) => total + getSubtotal(item), 0)
+              .toFixed(2) + " zł."}
+          </span>
+        </p>
+      </div>
     </div>
   );
 };
+
+export default CartContents;
