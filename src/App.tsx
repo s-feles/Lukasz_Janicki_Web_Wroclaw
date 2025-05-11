@@ -6,6 +6,7 @@ import Checkout from "./pages/Checkout/Checkout";
 import { CartProvider } from "./context/CartContext";
 import PermaCart from "./context/PermaCart";
 
+// Should be ready now.
 function App() {
   return (
     <CartProvider>
