@@ -1,6 +1,7 @@
 import ProductCard from "./components/ProductCard";
 import HeroSection from "./components/HeroSection";
 import { Product } from "../../context/CartContext";
+import { Link } from "react-router";
 
 // products.json
 const products: Product[] = [
@@ -63,12 +64,11 @@ function MainPage() {
                 Lista produktów
               </span>
             </h2>
-            <a
-              href="/Lukasz_Janicki_Web_Wroclaw/cart"
-              className="text-purple-400 hover:text-purple-300 flex items-center text-sm"
-            >
-              Zobacz swój koszyk
-            </a>
+            <Link to="/Lukasz_Janicki_Web_Wroclaw/cart">
+              <span className="text-purple-400 hover:text-purple-300 flex items-center text-sm">
+                Zobacz swój koszyk
+              </span>
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
