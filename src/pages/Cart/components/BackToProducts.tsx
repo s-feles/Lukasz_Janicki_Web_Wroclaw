@@ -10,7 +10,7 @@ export default function BackToProducts() {
           onClick={() => console.log("Back to products")}
         >
           <ArrowLeft className="mr-2 h-5 w-5" />
-          Back to Products
+          Kontynuuj zakupy
         </button>
       </Link>
     </div>

@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
 
+// Button component that saves the order in local storage, then redirects to a new HTML page as required.
+
 export default function ConfirmOrder() {
   const { state, clearCart } = useCart();
   
@@ -26,7 +28,7 @@ export default function ConfirmOrder() {
         className="flex items-center text-blue-400 hover:text-blue-600 transition-colors"
         onClick={handleConfirm}
       >
-        Confirm Order
+        Potwierdź zamówienie
         <ArrowRight className="ml-2 h-5 w-5" />
       </button>
     </div>

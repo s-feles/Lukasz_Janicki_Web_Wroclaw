@@ -1,13 +1,5 @@
-import { useCart } from "../../../context/CartContext";
-
-export interface Product {
-  id: number;
-  name: string;
-  price: {
-    main: number;
-    fractional: number;
-  };
-}
+import { Product, useCart } from "../../../context/CartContext";
+// Product card component as seen on the main page.
 
 interface ProductCardProps {
   product: Product;
@@ -39,7 +31,7 @@ function ProductCard({ product, img }: ProductCardProps) {
             className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-1.5 px-3 rounded text-center text-xs font-medium w-full"
             onClick={() => addItem(product)}
           >
-            Add To Cart
+            Dodaj do koszyka
           </button>
         </div>
       </div>

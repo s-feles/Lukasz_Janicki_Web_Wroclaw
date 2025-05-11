@@ -1,4 +1,4 @@
-import { CartProduct } from "../../Cart/Cart";
+import { CartProduct } from "../../../context/CartContext"
 
 interface CheckoutItemProps {
   product: CartProduct;

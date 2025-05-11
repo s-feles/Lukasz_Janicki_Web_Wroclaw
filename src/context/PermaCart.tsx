@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useCart } from "./CartContext";
 
+// Some effects that allow the cart to persist between refreshes.
+
 export default function PermaCart() {
   const { state, addItem, clearCart } = useCart();
 

@@ -9,7 +9,7 @@ export default function ProceedToCheckout() {
           className="flex items-center text-blue-400 hover:text-blue-600 transition-colors"
           onClick={() => console.log("Back to products")}
         >
-          Proceed to Checkout
+          Podsumowanie zamówienia
           <ArrowRight className="ml-2 h-5 w-5" />
         </button>
       </Link>

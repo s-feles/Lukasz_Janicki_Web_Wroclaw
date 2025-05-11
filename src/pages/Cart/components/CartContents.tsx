@@ -1,7 +1,7 @@
-import { CartProduct } from "../Cart";
 import { Plus, Minus, Trash2 } from "lucide-react";
-import { useCart } from "../../../context/CartContext";
+import { useCart, CartProduct } from "../../../context/CartContext";
 
+// Large component rendering a table of the cart's contents.
 const CartContents = () => {
   const { state, removeItem, updateQuantity } = useCart();
 
@@ -9,6 +9,8 @@ const CartContents = () => {
     return product.price.main + 0.01 * product.price.fractional;
   };
 
+  // getSubtotal here means something a bit different than it does in the checkout sense.
+  // Here it is the total for a single type of product
   const getSubtotal: (product: CartProduct) => number = (product) => {
     return getPrice(product) * product.quantity;
   };
@@ -16,12 +18,12 @@ const CartContents = () => {
   if (state.items.length === 0) {
     return (
       <div className="px-9">
-        <p className="text-xl">Your cart is empty.</p>
+        <p className="text-xl">Nic tu jeszcze nie ma!</p>
         <button
           //onClick={() => console.log("Back to products")}
           className="text-blue-400 mt-4 py-2 hover:text-blue-600"
         >
-          <a href="/">Continue Shopping</a>
+          <a href="/">Wróć do zakupów</a>
         </button>
       </div>
     );
@@ -32,10 +34,10 @@ const CartContents = () => {
       <table className="table-auto w-full">
         <thead className="bg-gray-950">
           <tr>
-            <th className="px-6 py-3 text-left text-lg">Product</th>
-            <th className="px-6 py-3 text-left text-lg">Price</th>
-            <th className="px-6 py-3 text-left text-lg">Quantity</th>
-            <th className="px-6 py-3 text-left text-lg">Subtotal</th>
+            <th className="px-6 py-3 text-left text-lg">Produkt</th>
+            <th className="px-6 py-3 text-left text-lg">Cena</th>
+            <th className="px-6 py-3 text-left text-lg">Ilość</th>
+            <th className="px-6 py-3 text-left text-lg">Razem</th>
             <th className="px-6 py-3 text-left text-lg"></th>
           </tr>
         </thead>
@@ -86,7 +88,7 @@ const CartContents = () => {
       </table>
       <div className="mt-2">
         <p className="text-3xl">
-          Your total is{" "}
+          Twoja kwota zamówienia:{" "}
           <span className="font-bold">
             {state.items
               .reduce((total, item) => total + getSubtotal(item), 0)

@@ -2,13 +2,16 @@ import Title from "./components/Title";
 import BackToCart from "./components/BackToCart";
 import CheckoutItem from "./components/CheckoutItem";
 import ConfirmOrder from "./components/ConfirmOrder";
-import { CartProduct } from "../Cart/Cart";
-import { useCart } from "../../context/CartContext";
+import { useCart, CartProduct } from "../../context/CartContext";
 
 interface CheckoutProps {
   shippingCost?: number;
   taxRate?: number;
 }
+
+// Checkout page listing the order.
+// Tax and shipping prices, here and in other places where they appear, are set to 0.
+// I would implement appropriate calculating functions if there was such need.
 
 export default function Checkout({ shippingCost, taxRate }: CheckoutProps) {
   const { state } = useCart();
@@ -35,12 +38,12 @@ export default function Checkout({ shippingCost, taxRate }: CheckoutProps) {
       </div>
       <div className="space-y-3 mb-3">
         <div className="flex justify-between text-sm pt-1">
-          <span className="text-gray-200">Subtotal</span>
+          <span className="text-gray-200">Koszt zakupów</span>
           <span className="font-medium">{getTotal().toFixed(2)} zł</span>
         </div>
 
         <div className="flex justify-between text-sm">
-          <span className="text-gray-200">Shipping</span>
+          <span className="text-gray-200">Koszt wysyłki</span>
           <span className="font-medium">
             {(shippingCost ? shippingCost : 0).toFixed(2)} zł
           </span>
@@ -48,13 +51,13 @@ export default function Checkout({ shippingCost, taxRate }: CheckoutProps) {
 
         <div className="flex justify-between text-sm pb-1">
           <span className="text-gray-200">
-            Tax ({(taxRate ? taxRate * 100 : 0).toFixed(0)}%)
+            Podatek ({(taxRate ? taxRate * 100 : 0).toFixed(0)}%)
           </span>
           <span className="font-medium">{(0).toFixed(2)} zł</span>
         </div>
 
         <div className="flex justify-between font-bold text-lg pt-2 border-t mt-2">
-          <span>Total</span>
+          <span>Razem</span>
           <span>{getTotal().toFixed(2)} zł</span>
         </div>
       </div>

@@ -2,53 +2,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Confirmation</title>
+  <title>Potwierdzenie zamówienia</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen">
   <div class="container mx-auto py-12 px-4">
     <div class="text-center mb-8">
-      <h1 class="text-3xl">Order placed successfully!</h1>
-      <p class="text-gray-200 mt-1.5">Thank you for your purchase</p>
+      <h1 class="text-3xl">Zamówienie złożone pomyślnie!</h1>
+      <p class="text-gray-200 mt-1.5">Dziękujemy za zakupy</p>
     </div>
     <div class="border-t border-b py-4 mb-6">
       <div class="flex justify-between mb-2">
-        <span class="font-medium">Order Number:</span>
-        <span id="orderNumber">Loading...</span>
+        <span class="font-medium">Numer zamówienia:</span>
+        <span id="orderNumber">Ładowanie...</span>
       </div>
       <div class="flex justify-between">
-        <span class="font-medium">Order Date:</span>
-        <span id="orderDate">Loading...</span>
+        <span class="font-medium">Data zamówienia:</span>
+        <span id="orderDate">Ładowanie...</span>
       </div>
     </div>
 
-    <h2 class="font-bold text-xl mb-4">Order Summary</h2>
+    <h2 class="font-bold text-xl mb-4">Podsumowanie</h2>
     <div id="orderProducts" class="space-y-3 mb-6 text-center text-gray-300">
-      Loading Order Details...
+      Ładowanie szczegółów zamówienia...
     </div>
 
     <div class="border-t pt-4 space-y-2">
       <div class="flex justify-between">
-        <span class="text-gray-300">Subtotal</span>
-        <span id="subtotal" class="font-medium">$0.00</span>
+        <span class="text-gray-300">Kwota zakupów</span>
+        <span id="subtotal" class="font-medium">0.00 zł</span>
       </div>
       <div class="flex justify-between">
-        <span class="text-gray-300">Shipping</span>
-        <span id="shipping" class="font-medium">$0.00</span>
+        <span class="text-gray-300">Wysyłka</span>
+        <span id="shipping" class="font-medium">0.00 zł</span>
       </div>
       <div class="flex justify-between">
-        <span class="text-gray-300">Tax</span>
-        <span id="tax" class="font-medium">$0.00</span>
+        <span class="text-gray-300">Podatek</span>
+        <span id="tax" class="font-medium">0.00 zł</span>
       </div>
       <div class="flex justify-between font-bold text-lg pt-2 border-t mt-2">
-        <span>Total</span>
-        <span id="total">$0.00</span>
+        <span>Razem</span>
+        <span id="total">0.00 zł</span>
       </div>
     </div>
   </div>
   <div class="mt-1 pb-4 text-center">
     <a href="/" class="text-blue-400 text-xl hover:text-blue-600"
-      >Back to Shop</a
+      >Powrót do sklepu</a
     >
   </div>
 
@@ -92,7 +92,9 @@
             <div class="flex text-left">
               <div>
                 <p class="font-medium">${item.name} x ${item.quantity}</p>
-                <p class="text-sm text-gray-300>${item.price.main}.${item.price.fractional} zł</p>
+                <p class="text-sm text-gray-300>${item.price.main}.${
+                item.price.fractional
+              } zł</p>
               </div>
               <div class="font-medium">${itemTotal.toFixed(2)} zł</div>
             </div>

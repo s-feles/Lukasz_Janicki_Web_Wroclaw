@@ -1,6 +1,6 @@
 import ProductCard from "./components/ProductCard";
 import HeroSection from "./components/HeroSection";
-import { Product } from "./components/ProductCard";
+import { Product } from "../../context/CartContext";
 
 // products.json
 const products: Product[] = [
@@ -46,8 +46,10 @@ const products: Product[] = [
   },
 ];
 
+// Additional image paths. They're kept in the public folder, thus not requiring /public/ in front of them.
 const imgs = [ '', 'banany.png', 'mleko.png', 'chleb.png', 'jajka.png', 'losos.png' ];
 
+// Component rendering the main page.
 function MainPage() {
   return (
     <>
@@ -58,14 +60,14 @@ function MainPage() {
           <div className="flex justify-between items-center mb-5">
             <h2 className="text-2xl font-bold">
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-400 text-transparent bg-clip-text">
-                Our Products
+                Lista produktów
               </span>
             </h2>
             <a
               href="/cart"
               className="text-purple-400 hover:text-purple-300 flex items-center text-sm"
             >
-              See your cart
+              Zobacz swój koszyk
             </a>
           </div>
 

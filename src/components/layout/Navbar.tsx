@@ -12,11 +12,11 @@ export default function Navbar() {
           InternShop
         </div>
         <div className="flex items-center space-x-6">
-          <p className="text-white">{state.items.length > 0 ? "Items: " + state.itemCount : "Empty Cart"}</p>
+          <p className="text-white">{state.items.length > 0 ? "Produktów: " + state.itemCount : "Pusty koszyk"}</p>
           <Link to="/cart">
             <ShoppingCart className="h-6 w-6 hover:text-purple-600"/>
           </Link>
-          <a href="#" className="text-white hover:text-purple-400">
+          <a href="/" className="text-white hover:text-purple-400">
             Login
           </a>
         </div>
@@ -24,3 +24,4 @@ export default function Navbar() {
     </nav>
   );
 }
+// The login button does nothing, but could redirect to an authentication page.
