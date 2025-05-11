@@ -1,5 +1,11 @@
 # React + TypeScript + Vite
 
+## To run this app locally
+
+1. Make sure you have the proper packages installed. Run `npm install` just in case.
+2. Run `npm run dev` in your command line.
+3. Navigate to `localhost:<PORT>`, where `<PORT>` should be displayed in the terminal once the app is up. 
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
