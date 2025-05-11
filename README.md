@@ -1,60 +1,31 @@
-# React + TypeScript + Vite
+# Simple web shop client app in React + TypeScript + Vite + TailwindCSS
 
-## To run this app locally
+## [EN]
+
+### To run this app locally
 
 1. Make sure you have the proper packages installed. Run `npm install` just in case.
-2. Run `npm run dev` in your command line.
-3. Navigate to `localhost:<PORT>`, where `<PORT>` should be displayed in the terminal once the app is up. 
+2. Run `npm run dev` in your command line from the root directory of the repository.
+3. Navigate to `localhost:<PORT>` in your browser, where `<PORT>` should be displayed in the terminal once the app is up. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Design and implementation choices
+This app uses React Router to manage navigation through subpages such as `cart` or `checkout`. It's a decent compromise between the single-page architecture usually found in React apps and the model-view-controller with routing approach found in some Express.js apps.
 
-Currently, two official plugins are available:
+Instead of classic CSS, I opted to use Tailwind for its ease of styling each component inline. Tailwind still does allow classic CSS to be used in place of its utility classes, though this has not come up for me yet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The product list is static, as provided by the recruiters. The cart is handled by a context provider. If the app were to grow larger, the cart would be managed by an external state library and the static products list would be replaced by a database interface. Such interface could also track orders and registered users and their data, which would also come in handy for generating order numbers (here, for showcase purposes, every order has number 1).
 
-## Expanding the ESLint configuration
+## [PL]
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Aby uruchomić tę aplikację lokalnie
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Upewnij się, że wszystkie potrzebne pakiety są zainstalowane (uruchom `npm install` z wiersza poleceń).
+2. Uruchom `npm run dev` z poziomu korzenia repozytorium w wierszu poleceń.
+3. Przejdź do `localhost:<PORT>` w swojej przeglądarce, gdzie `<PORT>` jest numerem portu, który powinien wyświetlić się po uruchomieniu aplikacji.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Decyzje projektowe i implementacyjne
+Ta aplikacja używa React Router do nawigowania między podstronami jak np. `cart` (koszyk) albo `checkout` (podsumowanie). Jest to sensowny kompromis pomiędzy jednostronową architekturą zazwyczaj znajdowaną w aplikacjach Reactowych oraz podejściem *model-view-controller* z routingiem znajdowanym w niektórych aplikacjach Express.js.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Zamiast klasycznego CSSa ta aplikacja wykorzystuje Tailwind ze względu na przystępność stylizacji każdego komponentu w jednej linii. Tailwind nadal zezwala na użycie klasycznego CSSa w miejsce swoich klas, do teraz jeszcze nie uznałem tego za konieczne.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Lista produktów jest statyczna, tak jak została podana w pliku przez rekruterów. Koszyk jest obsługiwany przez kontekst. Gdyby aplikacja miała się rozrosnąć, koszyk byłby zarządzany przez zewnętrzną bibliotekę stanową, a statyczna lista produktów zostałaby zastąpiona interfejsem bazy danych. Taka baza przechowywałaby również dane o złożonych zamówieniach i/lub zarejestrowanych użytkownikach. Automatycznie obsługiwałaby ona również generowanie kolejnych numerów zamówień (tutaj, ze względów pokazowych, każde zamówienie ma numer 1)
