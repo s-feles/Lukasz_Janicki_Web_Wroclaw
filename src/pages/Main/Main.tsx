@@ -46,6 +46,8 @@ const products: Product[] = [
   },
 ];
 
+const imgs = [ '', 'banany.png', 'mleko.png', 'chleb.png', 'jajka.png', 'losos.png' ];
+
 function MainPage() {
   return (
     <>
@@ -60,16 +62,16 @@ function MainPage() {
               </span>
             </h2>
             <a
-              href="#"
+              href="/cart"
               className="text-purple-400 hover:text-purple-300 flex items-center text-sm"
             >
-              View All
+              See your cart
             </a>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} img={imgs[product.id]} />
             ))}
           </div>
         </div>
