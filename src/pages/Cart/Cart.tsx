@@ -62,7 +62,7 @@ export default function Cart() {
       <BackToProducts />
       <Title />
       <CartContents products={initialCartItems} />
-      <ProceedToCheckout />
+      {initialCartItems.length > 0 ? <ProceedToCheckout /> : <></>}
     </div>
   )
 }
