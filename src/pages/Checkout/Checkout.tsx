@@ -1,8 +1,8 @@
 import Title from "./components/Title";
-import BackToCart from "./components/BackToCart";
 import CheckoutItem from "./components/CheckoutItem";
 import ConfirmOrder from "./components/ConfirmOrder";
 import { useCart, CartProduct } from "../../context/CartContext";
+import { ButtonLeft } from "../../components/common/Buttons";
 
 interface CheckoutProps {
   shippingCost?: number;
@@ -29,7 +29,7 @@ export default function Checkout({ shippingCost, taxRate }: CheckoutProps) {
   }
   return (
     <div className="container mx-auto py-4 px-4 md:px-6 rounded-lg">
-      <BackToCart />
+      <ButtonLeft text={"Powrót do koszyka"} link={"/cart"} />
       <Title />
       <div className="space-y-4 mb-3">
         {state.items.map((product) => (
