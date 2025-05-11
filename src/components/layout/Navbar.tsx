@@ -13,10 +13,10 @@ export default function Navbar() {
         </div>
         <div className="flex items-center space-x-6">
           <p className="text-white">{state.items.length > 0 ? "Produktów: " + state.itemCount : "Pusty koszyk"}</p>
-          <Link to="/cart">
+          <Link to="/Lukasz_Janicki_Web_Wroclaw/cart">
             <ShoppingCart className="h-6 w-6 hover:text-purple-600"/>
           </Link>
-          <a href="/" className="text-white hover:text-purple-400">
+          <a href="/Lukasz_Janicki_Web_Wroclaw/" className="text-white hover:text-purple-400">
             Login
           </a>
         </div>

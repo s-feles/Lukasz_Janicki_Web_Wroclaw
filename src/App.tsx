@@ -14,10 +14,10 @@ function App() {
       <div className="min-h-screen bg-gray-900 text-white">
         <Navbar />
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/Lukasz_Janicki_Web_Wroclaw/" element={<MainPage />} />
+          <Route path="/Lukasz_Janicki_Web_Wroclaw/cart" element={<Cart />} />
           <Route
-            path="/checkout"
+            path="/Lukasz_Janicki_Web_Wroclaw/checkout"
             element={<Checkout />}
           />
         </Routes>

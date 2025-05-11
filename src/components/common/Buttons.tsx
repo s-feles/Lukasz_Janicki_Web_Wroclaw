@@ -9,7 +9,7 @@ interface ButtonProps {
 export function ButtonLeft({ text, link }: ButtonProps) {
   return (
     <div className="flex items-center mb-6">
-      <Link to={link}>
+      <Link to={"/Lukasz_Janicki_Web_Wroclaw" + link}>
       <button
         className="flex items-center text-blue-400 hover:text-blue-600 transition-colors"
         onClick={() => console.log("Back to products")}
@@ -22,15 +22,10 @@ export function ButtonLeft({ text, link }: ButtonProps) {
   );
 }
 
-interface ButtonProps {
-    text: string;
-    link: string;
-}
-
 export function ButtonRight({ text, link }: ButtonProps) {
   return (
     <div className="flex justify-end mt-8">
-      <Link to={link}>
+      <Link to={"/Lukasz_Janicki_Web_Wroclaw" + link}>
         <button
           className="flex items-center text-blue-400 hover:text-blue-600 transition-colors"
           onClick={() => console.log("Back to products")}
