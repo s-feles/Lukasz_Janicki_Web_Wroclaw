@@ -23,7 +23,7 @@ const CartContents = () => {
           //onClick={() => console.log("Back to products")}
           className="text-blue-400 mt-4 py-2 hover:text-blue-600"
         >
-          <a href="/">Wróć do zakupów</a>
+          <a href="/Lukasz_Janicki_Web_Wroclaw/">Wróć do zakupów</a>
         </button>
       </div>
     );

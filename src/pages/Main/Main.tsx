@@ -64,7 +64,7 @@ function MainPage() {
               </span>
             </h2>
             <a
-              href="/cart"
+              href="/Lukasz_Janicki_Web_Wroclaw/cart"
               className="text-purple-400 hover:text-purple-300 flex items-center text-sm"
             >
               Zobacz swój koszyk
